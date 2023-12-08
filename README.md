@@ -33,9 +33,12 @@ After configuring the .env file:
 
 ## Frontend
 
-###Technologies Used
+### Technologies Used
 
 - React
+- React Router Dom
+- React Query (TanStack Query)
+- Material UI
 
 ### Setup
 

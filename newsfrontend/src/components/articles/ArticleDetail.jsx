@@ -6,6 +6,7 @@ import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import { useNavigate } from "react-router-dom";
+import noImage from "../../images/noImage.png";
 
 export default function ArticleDetail({ article }) {
   const navigate = useNavigate();
@@ -16,7 +17,7 @@ export default function ArticleDetail({ article }) {
     <Card>
       <CardMedia
         sx={{ height: 400 }}
-        image={article.url_to_image}
+        image={article.url_to_image  || noImage}
         title="green iguana"
       />
       <CardContent>

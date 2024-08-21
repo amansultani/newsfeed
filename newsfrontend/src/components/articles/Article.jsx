@@ -7,6 +7,7 @@ import Grid from "@mui/material/Grid";
 import CardActions from "@mui/material/CardActions";
 import Button from "@mui/material/Button";
 import { Link, useParams } from "react-router-dom";
+import noImage from "../../images/noImage.png";
 
 export default function Article(props) {
   const { categoryId } = useParams();
@@ -19,7 +20,7 @@ export default function Article(props) {
         <Card sx={{ maxWidth: 560 }}>
           <CardMedia
             sx={{ height: 220 }}
-            image={props.article.url_to_image}
+            image={props.article.url_to_image || noImage}
             title={props.article.title}
           />
           <CardContent>

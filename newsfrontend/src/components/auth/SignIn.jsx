@@ -80,8 +80,10 @@ const SignIn = () => {
               label="Email Address"
               name="email"
               autoComplete="email"
+              value="test@example.com"
               autoFocus
               error={emailError}
+              
             />
             <TextField
               margin="normal"
@@ -91,6 +93,7 @@ const SignIn = () => {
               label="Password"
               type="password"
               id="password"
+              value="test12345"
               autoComplete="current-password"
               error={passwordError}
             />

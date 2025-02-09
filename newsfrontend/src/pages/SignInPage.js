@@ -20,15 +20,9 @@ export async function action({ request }) {
     const resData = await response.data;
     const token = resData.token;
 
-    // const name = resData.name;
-
-    localStorage.setItem("token", token);
-    // localStorage.setItem("name", name);
-
-    const expiration = new Date();
-    expiration.setHours(expiration.getHours() + 24);
-    localStorage.setItem("expiration", expiration.toISOString());
+    sessionStorage.setItem("token", token);
     setBearerToken(token);
+    
     return redirect("/");
   } catch (error) {
     console.error("Error during login:", error);

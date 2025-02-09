@@ -16,11 +16,10 @@ class NewsUpdater
         foreach ($categories as $category) {
             // Delete existing records for the category
             News::where('category_id', $category->id)->delete();
-
             $news = $newsApi->getTopHeadLines(null,null,'us',$category->name,null,null);
             foreach($news->articles as $article)
             {
-                if (is_null($article->urlToImage)) continue;
+                if (is_null($article->urlToImage)) //continue; 
                  $source_id = \App\Models\Source::where('sourceid', $article->source->id)->first();  
                  $source_id ? $insert_source_id = $source_id->id : $insert_source_id = null;
                     News::create([
